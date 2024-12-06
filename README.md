@@ -10,7 +10,7 @@ This is just a plain local instance that you can clone in order to add Cypress. 
 1. cd into the `tests` directory:
   `cd tests`
    
-3. run npm init from `tests`: (you can select ok for all of the default settings)
+3. run npm init from `tests` (you can select ok for all of the default settings):
    `npm init`
    
 5. install Cypress in the tests directory:
