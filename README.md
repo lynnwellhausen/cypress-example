@@ -5,10 +5,10 @@ This is just a plain local instance that you can clone in order to add Cypress. 
 # Cypress Setup and Login Test Guide
 
 1. create a directory called `tests` in root:
-    ` mkdir tests `
+    `mkdir tests`
 
-1. cd into the tests directory
-   - cd user
+1. cd into the `tests` directory:
+  `cd user`
    
 
 3. run npm init (you can select ok for all of the default settings)
