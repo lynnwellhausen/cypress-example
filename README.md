@@ -3,75 +3,6 @@
 This is just a plain local instance that you can clone in order to use cypress. Prior to running Cypress, verify that you can run this instance on local host. 
 
 # Cypress Setup and Login Test Guide
-Create a directory called tests in the root directory:
-
-bash
-Copy code
-mkdir user
-Change into the tests directory:
-
-bash
-Copy code
-cd user
-Run npm init (select "OK" for all the default settings):
-
-bash
-Copy code
-npm init
-Install Cypress in the tests directory:
-
-bash
-Copy code
-npm install cypress --save-dev
-Extend Cypress with custom commands from the Testing Library ecosystem:
-
-bash
-Copy code
-npm install --save-dev @testing-library/cypress
-Start your local instance from the root directory:
-
-bash
-Copy code
-docker compose up -d
-Start Cypress from the tests directory:
-
-bash
-Copy code
-npx cypress open
-Follow the prompt in the browser to install any configuration files.
-
-Follow the prompt to create your first spec file.
-
-Open the test created in user/cypress/e2e/spec.cy.js in your IDE.
-
-Replace lines 1-5 with the following code and save:
-
-javascript
-Copy code
-import "@testing-library/cypress/add-commands";
-
-Cypress.session.clearAllSavedSessions();
-
-Cypress.Commands.add("login", (username, password) => {
-  cy.visit("http://localhost:3000/auth/login"); // Adjust this to your local app's login URL
-  cy.get('input[placeholder="name@company.com"]').type(username); // Adjust the placeholder for the username field
-  cy.get('input[placeholder="Password"]').type(password); // Adjust the placeholder for the password field
-  cy.contains(/^Sign in$/).click(); // Click the Sign In button
-});
-
-describe('Login Test', () => {
-  it('should log in successfully and navigate to the home page', () => {
-    cy.login("username", "password"); // Replace with actual username and password
-    cy.url().should('eq', "http://localhost:3000/auth/login");
-  });
-});
-Run the new test, and if everything is configured correctly, it should log you into your local instance:
-
-bash
-Copy code
-npx cypress run --browser chrome
-
-# Cypress Setup and Login Test Guide
 
 1. create a directory called tests in root
    - mkdir user
@@ -157,7 +88,54 @@ In resources:
 
 1) Use this template to create a new repo owned your github user, e.g `my-local-docker`
 
-2) Clone that repo to your machine. If you don't already have one, create a folder in your home directory to help keep organized, e.g `~/local-retool`
+2) Clone that repo to your
+# Cypress Setup and Login Test Guide
+Create a directory called tests in the root directory:
+
+bash
+Copy code
+mkdir user
+Change into the tests directory:
+
+bash
+Copy code
+cd user
+Run npm init (select "OK" for all the default settings):
+
+bash
+Copy code
+npm init
+Install Cypress in the tests directory:
+
+bash
+Copy code
+npm install cypress --save-dev
+Extend Cypress with custom commands from the Testing Library ecosystem:
+
+bash
+Copy code
+npm install --save-dev @testing-library/cypress
+Start your local instance from the root directory:
+
+bash
+Copy code
+docker compose up -d
+Start Cypress from the tests directory:
+
+bash
+Copy code
+npx cypress open
+Follow the prompt in the browser to install any configuration files.
+
+Follow the prompt to create your first spec file.
+
+Open the test created in user/cypress/e2e/spec.cy.js in your IDE.
+
+Replace lines 1-5 with the following code and save:
+
+javascript
+Copy code
+import "@testing-library machine. If you don't already have one, create a folder in your home directory to help keep organized, e.g `~/local-retool`
 
 3) Open up that repo in our text editor of choice
 
