@@ -1,6 +1,22 @@
 # retool-docker-compose
 
-A template to help you run Retool on your local machine via Docker Desktop
+A template to help you run Retool with Cypress tests on your local machine via Docker Desktop. This template contains one test to get you started. The test
+logs you into your Retool app and is in the file test-1.cy.js.
+
+# To set up Cypress and run the example test
+
+1. cd into the user directory
+2. run npm init
+3. install Cypress in the user directory
+   - npm install cypress --save-dev
+4. extend Cypress with custom commands from the testing library ecosystem
+   - npm install --save-dev @testing-library/cypress
+5. go to test-1.cy.js and add the login credentials for your local instance on line 15
+6. start your local instance from the root directory
+   - docker compose up -d
+7. run the test from the user directory (you may need to open a new terminal window)
+   - npx cypress open
+
 
 ## Prereqs
 
